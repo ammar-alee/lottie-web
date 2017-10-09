@@ -4514,20 +4514,21 @@ var ImagePreloader = (function(){
     }
 
     function loadImage(path){
+        console.log('image path', path)
         var img = document.createElement('img');
         img.addEventListener('load', imageLoaded.bind(this), false);
         img.addEventListener('error', imageLoaded.bind(this), false);
         img.src = path;
     }
     function loadAssets(assets){
-        this.totalAssets = assets.length;
-        var i;
-        for(i=0;i<this.totalAssets;i+=1){
-            if(!assets[i].layers){
-                loadImage.bind(this)(getAssetsPath.bind(this)(assets[i]));
-                this.totalImages += 1;
-            }
-        }
+        // this.totalAssets = assets.length;
+        // var i;
+        // for(i=0;i<this.totalAssets;i+=1){
+        //     if(!assets[i].layers){
+        //         loadImage.bind(this)(getAssetsPath.bind(this)(assets[i]));
+        //         this.totalImages += 1;
+        //     }
+        // }
     }
 
     function setPath(path){
@@ -9147,11 +9148,16 @@ CVImageElement.prototype.createElements = function(){
         this.globalData.elementLoaded();
     }.bind(this);
 
-    this.img = new Image();
-    this.img.addEventListener('load', imageLoaded, false);
-    this.img.addEventListener('error', imageFailed, false);
-    var assetPath = this.globalData.getAssetsPath(this.assetData);
-    this.img.src = assetPath;
+    this.img = global.loadedImages[this.assetData.p];
+    imageLoaded();
+
+    // console.log('assetdata', this.assetData)
+
+    // this.img = new Image();
+    // this.img.addEventListener('load', imageLoaded, false);
+    // this.img.addEventListener('error', imageFailed, false);
+    // var assetPath = this.globalData.getAssetsPath(this.assetData);
+    // this.img.src = assetPath;
 
     this._parent.createElements.call(this);
 

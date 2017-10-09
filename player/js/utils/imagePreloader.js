@@ -23,20 +23,21 @@ var ImagePreloader = (function(){
     }
 
     function loadImage(path){
+        console.log('image path', path)
         var img = document.createElement('img');
         img.addEventListener('load', imageLoaded.bind(this), false);
         img.addEventListener('error', imageLoaded.bind(this), false);
         img.src = path;
     }
     function loadAssets(assets){
-        this.totalAssets = assets.length;
-        var i;
-        for(i=0;i<this.totalAssets;i+=1){
-            if(!assets[i].layers){
-                loadImage.bind(this)(getAssetsPath.bind(this)(assets[i]));
-                this.totalImages += 1;
-            }
-        }
+        // this.totalAssets = assets.length;
+        // var i;
+        // for(i=0;i<this.totalAssets;i+=1){
+        //     if(!assets[i].layers){
+        //         loadImage.bind(this)(getAssetsPath.bind(this)(assets[i]));
+        //         this.totalImages += 1;
+        //     }
+        // }
     }
 
     function setPath(path){

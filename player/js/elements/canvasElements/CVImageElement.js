@@ -35,11 +35,16 @@ CVImageElement.prototype.createElements = function(){
         this.globalData.elementLoaded();
     }.bind(this);
 
-    this.img = new Image();
-    this.img.addEventListener('load', imageLoaded, false);
-    this.img.addEventListener('error', imageFailed, false);
-    var assetPath = this.globalData.getAssetsPath(this.assetData);
-    this.img.src = assetPath;
+    this.img = global.loadedImages[this.assetData.p];
+    imageLoaded();
+
+    // console.log('assetdata', this.assetData)
+
+    // this.img = new Image();
+    // this.img.addEventListener('load', imageLoaded, false);
+    // this.img.addEventListener('error', imageFailed, false);
+    // var assetPath = this.globalData.getAssetsPath(this.assetData);
+    // this.img.src = assetPath;
 
     this._parent.createElements.call(this);
 
