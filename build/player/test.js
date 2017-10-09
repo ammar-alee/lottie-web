@@ -79,14 +79,13 @@ console.log('image paths', imagePaths)
 preloadImages(imagePaths).then(loadedImages => {
   console.log('loadedImages', loadedImages)
 
-  global.loadedImages = loadedImages;
-
   const animationItem = bodymovin.loadAnimation({
     // container: element, // the dom element
     renderer: 'canvas',
     loop: false,
     autoplay: false,
     animationData: animationData, // the animation data
+    images: loadedImages,
     rendererSettings: {
       context: context, // the canvas context
       // scaleMode: 'noScale',

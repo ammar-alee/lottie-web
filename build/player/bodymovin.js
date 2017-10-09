@@ -23,7 +23,9 @@ var window = (typeof window === "undefined") ? {} : window;
 //   }
 // })()
 
-require('raf').polyfill()
+// require('raf').polyfill()
+
+requestAnimationFrame = () => {}
 
 if (typeof navigator === 'undefined') {
   navigator = {
@@ -5755,6 +5757,9 @@ function CanvasRenderer(animationItem, config){
     }
     this.renderedFrame = -1;
     this.globalData = {
+        getImages: function() {
+          return animationItem.images;
+        },
         frameNum: -1
     };
     this.contextData = {
@@ -9148,7 +9153,7 @@ CVImageElement.prototype.createElements = function(){
         this.globalData.elementLoaded();
     }.bind(this);
 
-    this.img = global.loadedImages[this.assetData.p];
+    this.img = this.globalData.getImages()[this.assetData.p];
     imageLoaded();
 
     // console.log('assetdata', this.assetData)
@@ -11030,6 +11035,7 @@ AnimationItem.prototype.setParams = function(params) {
     if(params.wrapper || params.container){
         this.wrapper = params.wrapper || params.container;
     }
+    this.images = params.images;
     var animType = params.animType ? params.animType : params.renderer ? params.renderer : 'svg';
     switch(animType){
         case 'canvas':

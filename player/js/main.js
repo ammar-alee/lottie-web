@@ -13,7 +13,9 @@
 //   }
 // })()
 
-require('raf').polyfill()
+// require('raf').polyfill()
+
+requestAnimationFrame = () => {}
 
 if (typeof navigator === 'undefined') {
   navigator = {

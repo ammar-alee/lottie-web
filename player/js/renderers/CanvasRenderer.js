@@ -12,6 +12,9 @@ function CanvasRenderer(animationItem, config){
     }
     this.renderedFrame = -1;
     this.globalData = {
+        getImages: function() {
+          return animationItem.images;
+        },
         frameNum: -1
     };
     this.contextData = {

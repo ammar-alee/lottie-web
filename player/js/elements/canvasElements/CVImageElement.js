@@ -35,7 +35,7 @@ CVImageElement.prototype.createElements = function(){
         this.globalData.elementLoaded();
     }.bind(this);
 
-    this.img = global.loadedImages[this.assetData.p];
+    this.img = this.globalData.getImages()[this.assetData.p];
     imageLoaded();
 
     // console.log('assetdata', this.assetData)
