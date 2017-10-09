@@ -104,12 +104,9 @@ preloadImages(imagePaths).then(loadedImages => {
     for (let i = 0; i <= animationItem.totalFrames; i++) {
       context.fillStyle = 'white';
       context.fillRect(0, 0, canvas.width, canvas.height);
-      // context.clearRect(0, 0, canvas.width, canvas.height);
 
       animationItem.goToAndStop(i, true);
-      animationItem.gotoFrame(i);
 
-      // animationItem.advanceTime(16);
       frames.push(canvas.toBuffer());
     }
 
