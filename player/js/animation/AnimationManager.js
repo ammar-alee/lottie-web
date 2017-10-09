@@ -15,7 +15,7 @@ var animationManager = (function(){
                 i -= 1;
                 len -= 1;
                 if(!animItem.isPaused){
-                    subtractPlayingCount();   
+                    subtractPlayingCount();
                 }
             }
             i += 1;
@@ -160,16 +160,16 @@ var animationManager = (function(){
         }
         if(standalone && len === 0){
             if(!renderer){
-                renderer = 'svg';
+                renderer = 'canvas';
             }
-            var body = document.getElementsByTagName('body')[0];
-            body.innerHTML = '';
-            var div = document.createElement('div');
-            div.style.width = '100%';
-            div.style.height = '100%';
-            div.setAttribute('data-bm-type',renderer);
-            body.appendChild(div);
-            registerAnimation(div, animationData);
+            // var body = document.getElementsByTagName('body')[0];
+            // body.innerHTML = '';
+            // var div = document.createElement('div');
+            // div.style.width = '100%';
+            // div.style.height = '100%';
+            // div.setAttribute('data-bm-type',renderer);
+            // body.appendChild(div);
+            // registerAnimation(div, animationData);
         }
     }
 

@@ -8,7 +8,8 @@
     "url": "https://github.com/bodymovin/bodymovin.git"
   },
   "scripts": {
-    "start": "gulp buildAll"
+    "start": "gulp buildAll",
+    "buildFull": "gulp buildFull"
   },
   "keywords": [
     "animation",

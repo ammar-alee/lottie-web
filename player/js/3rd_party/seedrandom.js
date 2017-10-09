@@ -192,16 +192,17 @@
 // module if available.
 //
     function autoseed() {
-        try {
-            if (nodecrypto) { return tostring(nodecrypto.randomBytes(width)); }
-            var out = new Uint8Array(width);
-            (global.crypto || global.msCrypto).getRandomValues(out);
-            return tostring(out);
-        } catch (e) {
-            var browser = global.navigator,
-                plugins = browser && browser.plugins;
-            return [+new Date, global, plugins, global.screen, tostring(pool)];
-        }
+        console.log('autoseed')
+        // try {
+        //     if (nodecrypto) { return tostring(nodecrypto.randomBytes(width)); }
+        //     var out = new Uint8Array(width);
+        //     (global.crypto || global.msCrypto).getRandomValues(out);
+        //     return tostring(out);
+        // } catch (e) {
+        //     var browser = global.navigator,
+        //         plugins = browser && browser.plugins;
+        //     return [+new Date, global, plugins, global.screen, tostring(pool)];
+        // }
     }
 
 //

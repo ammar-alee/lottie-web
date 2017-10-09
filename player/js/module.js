@@ -165,15 +165,15 @@ var window = (typeof window === "undefined") ? {} : window;
     var standalone = '__[STANDALONE]__';
     var animationData = '__[ANIMATIONDATA]__';
     var renderer = '';
-    if (standalone) {
-        var scripts = document.getElementsByTagName('script');
-        var index = scripts.length - 1;
-        var myScript = scripts[index] || {
-            src: ''
-        };
-        var queryString = myScript.src.replace(/^[^\?]+\??/, '');
-        renderer = getQueryVariable('renderer');
-    }
+    // if (standalone) {
+    //     var scripts = document.getElementsByTagName('script');
+    //     var index = scripts.length - 1;
+    //     var myScript = scripts[index] || {
+    //         src: ''
+    //     };
+    //     var queryString = myScript.src.replace(/^[^\?]+\??/, '');
+    //     renderer = getQueryVariable('renderer');
+    // }
     var readyStateCheckInterval = setInterval(checkReady, 100);
     return bodymovinjs;
 }));

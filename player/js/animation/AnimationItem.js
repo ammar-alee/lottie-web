@@ -325,7 +325,7 @@ AnimationItem.prototype.renderFrame = function () {
     if(this.isLoaded === false){
         return;
     }
-    //console.log('this.currentFrame:',this.currentFrame + this.firstFrame);
+    console.log('this.currentFrame:',this.currentFrame + this.firstFrame);
     this.renderer.renderFrame(this.currentFrame + this.firstFrame);
 };
 
@@ -394,6 +394,7 @@ AnimationItem.prototype.goToAndPlay = function (value, isFrame, name) {
 };
 
 AnimationItem.prototype.advanceTime = function (value) {
+    console.log('advanceTime', value)
     if(this.pendingSegment){
         this.pendingSegment = false;
         this.adjustSegment(this.segments.shift());
@@ -420,6 +421,7 @@ AnimationItem.prototype.moveFrame = function (value, name) {
 };
 
 AnimationItem.prototype.adjustSegment = function(arr){
+    console.log('adjust segment', arr)
     this.playCount = 0;
     if(arr[1] < arr[0]){
         if(this.frameModifier > 0){
