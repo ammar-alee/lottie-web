@@ -14171,12 +14171,12 @@ GroupEffect.prototype.init = function(data,element,dynamicProperties){
     bodymovinjs.__getFactory = getFactory;
     bodymovinjs.version = '4.11.1';
 
-    function checkReady() {
-        if (document.readyState === "complete") {
-            clearInterval(readyStateCheckInterval);
-            searchAnimations();
-        }
-    }
+    // function checkReady() {
+    //     if (document.readyState === "complete") {
+    //         clearInterval(readyStateCheckInterval);
+    //         searchAnimations();
+    //     }
+    // }
 
     function getQueryVariable(variable) {
         var vars = queryString.split('&');
@@ -14199,6 +14199,6 @@ GroupEffect.prototype.init = function(data,element,dynamicProperties){
     //     var queryString = myScript.src.replace(/^[^\?]+\??/, '');
     //     renderer = getQueryVariable('renderer');
     // }
-    var readyStateCheckInterval = setInterval(checkReady, 100);
+    // var readyStateCheckInterval = setInterval(checkReady, 100);
     return bodymovinjs;
 }));

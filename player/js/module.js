@@ -146,12 +146,12 @@ var window = (typeof window === "undefined") ? {} : window;
     bodymovinjs.__getFactory = getFactory;
     bodymovinjs.version = '[[BM_VERSION]]';
 
-    function checkReady() {
-        if (document.readyState === "complete") {
-            clearInterval(readyStateCheckInterval);
-            searchAnimations();
-        }
-    }
+    // function checkReady() {
+    //     if (document.readyState === "complete") {
+    //         clearInterval(readyStateCheckInterval);
+    //         searchAnimations();
+    //     }
+    // }
 
     function getQueryVariable(variable) {
         var vars = queryString.split('&');
@@ -174,6 +174,6 @@ var window = (typeof window === "undefined") ? {} : window;
     //     var queryString = myScript.src.replace(/^[^\?]+\??/, '');
     //     renderer = getQueryVariable('renderer');
     // }
-    var readyStateCheckInterval = setInterval(checkReady, 100);
+    // var readyStateCheckInterval = setInterval(checkReady, 100);
     return bodymovinjs;
 }));
